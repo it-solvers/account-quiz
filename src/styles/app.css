@@ -1,0 +1,100 @@
+/* 공통 내비게이션 */
+.brand{color:var(--ink)}.brand:hover{text-decoration:none}
+.top-links a{padding:6px 12px;border-radius:999px;color:#344454;font-weight:600}
+.top-links a:hover{background:var(--accent-light);text-decoration:none}
+.top-links a.active{background:var(--accent);color:#fff}
+.nav-list a.active{background:var(--accent-light);color:var(--accent);font-weight:700}
+.lessons-title{margin:26px 2px 14px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* 홈 */
+.home-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:24px}
+.home-card{display:block;background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,30px);box-shadow:var(--shadow);color:var(--ink)}
+.home-card:hover{border-color:var(--accent);text-decoration:none}
+.home-card h2{margin:4px 0 8px;font-size:24px}
+.home-card p{color:#4c5a67;margin:0 0 14px}
+.home-card .go{color:var(--accent);font-weight:800}
+
+/* 교재 보조 */
+.debit-credit{margin:18px 0;background:#f9fbfc;border-color:#cfdfe3}
+.table-wrap{overflow-x:auto}
+.plain-table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
+.plain-table th,.plain-table td{padding:11px;border:1px solid #d6e0e5;text-align:left}
+.plain-table thead tr{background:#e8f1f2}
+.quiz-cta{background:linear-gradient(135deg,#f0f8f6,#f7f4ff);border-color:#d6e6e3}
+.sidebar{scroll-padding:8px}
+
+/* 퀴즈 */
+.quiz-game,.quiz-setup{background:linear-gradient(135deg,#f0f8f6,#f7f4ff);border:1px solid #d6e6e3}
+.game-head{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.game-kicker{font-size:.78rem;font-weight:800;letter-spacing:.09em;color:var(--accent)}
+.game-stats{display:flex;gap:8px;flex-wrap:wrap}
+.stat-pill{background:#fff;border:1px solid #dce6e8;border-radius:999px;padding:5px 11px;font-size:.86rem;font-weight:750}
+.progress-track{height:8px;background:#dce8e8;border-radius:99px;overflow:hidden;margin:18px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,#2b8178,#7a6ad7);transition:width .2s ease}
+.mission-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,3vw,28px);box-shadow:var(--shadow)}
+.mission-tag{display:inline-flex;background:#fff0cf;color:#80551b;border-radius:999px;padding:4px 10px;font-size:.8rem;font-weight:800}
+.added-tag{display:inline-flex;margin-left:6px;background:#e7edf9;color:#34508c;border-radius:999px;padding:4px 10px;font-size:.8rem;font-weight:800}
+.q-prompt{font-size:1.25rem;margin:12px 0 8px;white-space:pre-line}
+.mission-story{color:#596a79;margin:0 0 17px}
+.mission-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.mission-option{display:flex;align-items:flex-start;gap:4px;border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:#fff;text-align:left;color:var(--ink);font:inherit;cursor:pointer;min-height:48px}
+.mission-option:hover{border-color:#559a92;background:#f5fbfa}
+.mission-option.selected{border-color:#5b76b8;background:#edf2ff}
+.option-letter{display:inline-grid;place-items:center;flex:none;width:26px;height:26px;border-radius:8px;background:#edf1f4;margin-right:8px;font-weight:850;font-size:.82rem}
+.mission-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:20px}
+.game-btn{display:inline-block;border:0;border-radius:999px;background:var(--accent);color:#fff;font-weight:800;padding:11px 19px;cursor:pointer;font:inherit;font-weight:800;min-height:44px}
+.game-btn:hover{text-decoration:none;filter:brightness(1.07)}
+.game-btn:disabled{opacity:.45;cursor:not-allowed}
+.game-btn.secondary{background:#e8eeef;color:#293943}
+.q-dots{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.dot{width:34px;height:34px;border-radius:9px;border:1px solid var(--line);background:#fff;font:inherit;font-size:.82rem;cursor:pointer}
+.dot.done{background:#e7f3f1;border-color:#9cc7c1}
+.dot.current{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-light);font-weight:800}
+
+.setup-group{border:1px solid var(--line);border-radius:12px;background:#fff;margin:16px 0;padding:14px 16px}
+.setup-group legend{font-weight:800;padding:0 6px}
+.setup-actions,.count-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.chapter-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.check{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;min-height:44px}
+.check.on{border-color:#5aa198;background:#f1f9f7}
+.check input{width:18px;height:18px;flex:none}
+.check small{margin-left:auto;color:var(--muted);white-space:nowrap}
+.btn-on{border-color:var(--accent);background:var(--accent-light);color:var(--accent);font-weight:700}
+.count-input{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.count-input input{width:84px;font:inherit;border:1px solid var(--line);border-radius:10px;padding:9px 10px}
+
+.journal-form{display:grid;gap:10px;margin-top:14px}
+.journal-row{display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,1fr);gap:8px;align-items:center}
+.journal-row select,.journal-row input{font:inherit;border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#fff;color:var(--ink);min-width:0;min-height:44px}
+.side-badge{display:inline-grid;place-items:center;height:36px;border-radius:9px;font-weight:800;font-size:.9rem}
+.side-badge.debit{background:#e7edf9;color:#34508c}.side-badge.credit{background:#fdeee2;color:#8a4a1b}
+
+.game-result{text-align:center}
+.game-result .big-score{font-size:2.5rem;font-weight:900;line-height:1.2;color:var(--accent)}
+.game-result h3{margin:10px 0}
+.score-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:560px;margin:14px auto}
+.score-grid div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px}
+.score-grid small{display:block;color:var(--muted)}.score-grid b{font-size:1.3rem}
+.score-grid .ok{color:#206747}.score-grid .bad{color:#a53d35}
+.exam-sheet{display:grid;gap:12px;text-align:left;margin:24px 0}
+.exam-item{background:#fff;border:1px solid var(--line);border-left:5px solid #aab5c0;border-radius:12px;padding:15px 17px}
+.exam-item.exam-correct{border-left-color:#2c8b69}.exam-item.exam-wrong{border-left-color:#d46b62}
+.exam-item-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.exam-mark{font-size:.8rem;font-weight:800;padding:3px 9px;border-radius:999px;background:#edf1f4;white-space:nowrap}
+.exam-correct .exam-mark{background:#eaf8f0;color:#206747}.exam-wrong .exam-mark{background:#fff0ee;color:#a53d35}
+.exam-question{font-weight:750;white-space:pre-line}
+.exam-item p{margin:8px 0}
+.exam-explanation{background:#f5f7f8;border-radius:8px;padding:10px 12px;font-size:.92rem}
+
+@media(max-width:900px){.home-cards{grid-template-columns:1fr}}
+@media(max-width:580px){
+  .topbar-inner{flex-wrap:wrap;gap:8px}
+  .top-links a{padding:6px 10px}
+  .mission-options,.chapter-checks{grid-template-columns:1fr}
+  .game-head{align-items:flex-start}
+  .journal-row{grid-template-columns:52px minmax(0,1fr)}
+  .journal-row input{grid-column:1 / -1}
+  .score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .game-result .big-score{font-size:2rem}
+}
