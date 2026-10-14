@@ -19,7 +19,7 @@ export default function HomePage() {
         <a className="home-card" href="#/study">
           <div className="label">교재 학습</div>
           <h2>교재 읽기</h2>
-          <p>1장 회계의 기초부터 9장 결산보고서 작성까지, 핵심 개념과 예제, 확인 문제를 순서대로 학습합니다.</p>
+          <p>가상의 신생 개발사 ‘새싹소프트’의 한 해를 따라가며, 큰 그림부터 거래·분개·장부·결산·재무제표까지 15개 장을 개발자의 눈높이로 학습합니다.</p>
           <span className="go">교재 학습으로 이동 →</span>
         </a>
         <a className="home-card" href="#/quiz">

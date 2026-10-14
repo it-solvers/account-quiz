@@ -5,7 +5,7 @@ export type Difficulty = 1 | 2 | 3
 export interface QuestionBase {
   id: string
   type: QuestionType
-  /** 교재 장 번호(1~9). 학습 범위 선택에 사용 */
+  /** 교재 장 번호(1~15). 학습 범위 선택에 사용 */
   chapterId: number
   difficulty: Difficulty
   /** textbook: 원본 교재 미션 / added: 이번에 추가한 문제 */

@@ -54,17 +54,9 @@ export default function StudyPage({ section }: { section?: string }) {
       </aside>
 
       <main className="main">
-        <section className="panel" id="guide">
-          <h2>이 교재를 공부하는 방법</h2>
-          <p>각 장에서 먼저 <strong>기초 설명</strong>과 핵심 개념을 읽고, 계산·적용 예제를 따라 해 보세요. 그다음 <strong>퀴즈</strong>에 도전하세요. 퀴즈는 풀이 중에는 정답을 공개하지 않고, 모든 문제를 푼 뒤 시험지 형식으로 점수와 해설을 보여 줍니다.</p>
-          <div className="flowline">
-            {['거래 이해', '분개', '총계정원장', '시산표', '결산·마감', '재무제표'].map((s) => <div key={s}>{s}</div>)}
-          </div>
-        </section>
-
         <h2 className="lessons-title" id="lessons">기초 설명</h2>
         {chapters.map((c) => (
-          <ChapterSection key={c.id} chapter={c} extra={c.id === 5 ? <DebitCreditSection /> : undefined} />
+          <ChapterSection key={c.id} chapter={c} extra={c.id === 3 ? <DebitCreditSection /> : undefined} />
         ))}
 
         <DevCourse />

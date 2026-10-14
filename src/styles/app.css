@@ -98,3 +98,5 @@
   .score-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .game-result .big-score{font-size:2rem}
 }
+
+.lines p{margin:.3em 0}.lines .bullet{padding-left:1.1em}.lines .sub{margin-top:.8em;font-weight:700}

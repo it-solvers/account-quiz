@@ -1,6 +1,6 @@
 import type { ChoiceRecord, JournalRecord, QuestionRecord } from '../types/quiz'
 
-// 교재 본문(2·3·5장, 개발자 실무 절)에 있는 내용만으로 출제한 추가 문제입니다.
+// 교재 본문(재무상태·경영성과·분개 장, 개발자 실무 절)에 있는 내용만으로 출제한 추가 문제입니다.
 const FIVE = ['자산', '부채', '자본', '수익', '비용']
 
 const classify = (id: string, chapterId: number, account: string, answer: string, why: string): ChoiceRecord => ({
@@ -11,63 +11,63 @@ const classify = (id: string, chapterId: number, account: string, answer: string
 
 const SIDES = ['차변', '대변']
 const side = (id: string, prompt: string, answer: string, why: string): ChoiceRecord => ({
-  id, kind: 'choice', type: 'side', chapterId: 5, difficulty: 1, source: 'added',
+  id, kind: 'choice', type: 'side', chapterId: 3, difficulty: 1, source: 'added',
   prompt, options: SIDES, answer: SIDES.indexOf(answer), explanation: why,
 })
 
 const ACCOUNTS = ['현금', '보통예금', '외상매출금', '외상매입금', '비품', '대출금', '자본금', '용역수익', '이자수익', '임차료', '통신비', '급여']
 const journal = (id: string, prompt: string, debit: string, credit: string, amount: number, why: string, difficulty: 1 | 2 | 3 = 2): JournalRecord => ({
-  id, kind: 'journal', type: 'journal', chapterId: 5, difficulty, source: 'added',
+  id, kind: 'journal', type: 'journal', chapterId: 3, difficulty, source: 'added',
   prompt, accounts: ACCOUNTS, answer: { debit, credit, amount }, explanation: why,
 })
 
 const balance = (id: string, lines: string, options: string[], answer: number, why: string): ChoiceRecord => ({
-  id, kind: 'choice', type: 'balance', chapterId: 6, difficulty: 2, source: 'added',
+  id, kind: 'choice', type: 'balance', chapterId: 5, difficulty: 2, source: 'added',
   prompt: `다음 분개의 차변 합계와 대변 합계를 비교하세요.\n${lines}`,
   options, answer, explanation: why,
 })
 const BAL = ['일치한다', '차변 합계가 더 크다', '대변 합계가 더 크다']
 
 export const addedQuestions: QuestionRecord[] = [
-  classify('c01', 2, '외상매출금', '자산', '상품이나 서비스를 외상으로 제공해 앞으로 받을 권리가 생긴 금액이므로 자산입니다.'),
-  classify('c02', 5, '선수금', '부채', '대금을 먼저 받았지만 상품 인도나 서비스 제공 등 남은 의무가 있을 수 있으므로 일반적으로 부채입니다.'),
-  classify('c03', 2, '차입금', '부채', '빌린 돈으로, 회사가 앞으로 갚아야 할 의무입니다. 통장에 입금되어도 수익이 아닙니다.'),
-  classify('c04', 3, '감가상각비', '비용', '유형자산의 감가상각을 해당 기간의 비용으로 인식한 계정입니다.'),
-  classify('c05', 2, '자본금', '자본', '출자와 같이 소유주 지분을 나타내는 자본 계정입니다.'),
-  classify('c06', 5, '미지급금', '부채', '지급해야 할 돈이므로 부채입니다. 이름의 ‘지급(줄)’을 기억하세요.'),
-  classify('c07', 5, '선급금', '자산', '회사가 먼저 지급한 금액으로 보통 자산입니다.'),
-  classify('c08', 3, '임대료수익', '수익', '일정 기간의 성과로 발생한 수익 계정입니다.'),
-  classify('c09', 3, '이자수익', '수익', '이자를 받아 발생한 수익입니다.'),
-  classify('c10', 3, '통신비', '비용', '영업활동 등을 위해 소비되거나 발생한 비용입니다.'),
-  classify('c11', 2, '비품', '자산', '회사가 보유하며 사용하는 물품으로, 자산으로 인식한 계정입니다.'),
-  classify('c12', 2, '외상매입금', '부채', '상품 등을 외상으로 사고 아직 지급하지 않은 금액으로, 앞으로 갚아야 할 부채입니다.'),
+  classify('c01', 7, '외상매출금', '자산', '상품이나 서비스를 외상으로 제공해 앞으로 받을 권리가 생긴 금액이므로 자산입니다.'),
+  classify('c02', 3, '선수금', '부채', '대금을 먼저 받았지만 상품 인도나 서비스 제공 등 남은 의무가 있을 수 있으므로 일반적으로 부채입니다.'),
+  classify('c03', 7, '차입금', '부채', '빌린 돈으로, 회사가 앞으로 갚아야 할 의무입니다. 통장에 입금되어도 수익이 아닙니다.'),
+  classify('c04', 8, '감가상각비', '비용', '유형자산의 감가상각을 해당 기간의 비용으로 인식한 계정입니다.'),
+  classify('c05', 7, '자본금', '자본', '출자와 같이 소유주 지분을 나타내는 자본 계정입니다.'),
+  classify('c06', 3, '미지급금', '부채', '지급해야 할 돈이므로 부채입니다. 이름의 ‘지급(줄)’을 기억하세요.'),
+  classify('c07', 3, '선급금', '자산', '회사가 먼저 지급한 금액으로 보통 자산입니다.'),
+  classify('c08', 8, '임대료수익', '수익', '일정 기간의 성과로 발생한 수익 계정입니다.'),
+  classify('c09', 8, '이자수익', '수익', '이자를 받아 발생한 수익입니다.'),
+  classify('c10', 8, '통신비', '비용', '영업활동 등을 위해 소비되거나 발생한 비용입니다.'),
+  classify('c11', 7, '비품', '자산', '회사가 보유하며 사용하는 물품으로, 자산으로 인식한 계정입니다.'),
+  classify('c12', 7, '외상매입금', '부채', '상품 등을 외상으로 사고 아직 지급하지 않은 금액으로, 앞으로 갚아야 할 부채입니다.'),
 
   {
-    id: 'u01', kind: 'choice', type: 'meaning', chapterId: 5, difficulty: 1, source: 'added',
+    id: 'u01', kind: 'choice', type: 'meaning', chapterId: 3, difficulty: 1, source: 'added',
     prompt: '‘미수금’의 성격으로 가장 알맞은 것은?',
     options: ['회사가 받을 돈이므로 자산', '회사가 지급해야 할 돈이므로 부채', '소유주 몫이므로 자본', '벌어들인 성과이므로 수익'],
     answer: 0, explanation: '미수금은 일반적으로 회사가 받을 돈이므로 자산입니다. 반대로 미지급금은 지급해야 할 돈이므로 부채입니다.',
   },
   {
-    id: 'u02', kind: 'choice', type: 'meaning', chapterId: 5, difficulty: 2, source: 'added',
+    id: 'u02', kind: 'choice', type: 'meaning', chapterId: 3, difficulty: 2, source: 'added',
     prompt: '고객이 상품 인도 전에 대금을 먼저 입금했습니다. 이 금액의 성격으로 일반적으로 알맞은 것은?',
     options: ['곧바로 수익', '남은 의무가 있을 수 있는 부채(선수금)', '자본금', '비용'],
     answer: 1, explanation: '이미 돈을 받았더라도 아직 상품이나 서비스를 제공하지 않았다면 선수금(부채)일 수 있습니다.',
   },
   {
-    id: 'u03', kind: 'choice', type: 'meaning', chapterId: 3, difficulty: 2, source: 'added',
+    id: 'u03', kind: 'choice', type: 'meaning', chapterId: 8, difficulty: 2, source: 'added',
     prompt: '‘돈을 지출했다’는 사실만으로 항상 비용이라고 할 수 있을까요?',
     options: ['그렇다. 지출은 모두 비용이다', '아니다. 자산 취득이나 대출 원금 상환일 수 있다', '아니다. 지출은 모두 수익이다', '그렇다. 단, 현금일 때만'],
     answer: 1, explanation: '돈을 지출했다는 사실만으로 비용인 것은 아닙니다. 자산 취득이나 대출 원금 상환일 수 있습니다.',
   },
   {
-    id: 'u04', kind: 'choice', type: 'meaning', chapterId: 5, difficulty: 2, source: 'added',
+    id: 'u04', kind: 'choice', type: 'meaning', chapterId: 3, difficulty: 2, source: 'added',
     prompt: '차변과 대변에 대한 설명으로 알맞은 것은?',
     options: ['차변은 입금, 대변은 출금을 뜻한다', '차변은 플러스, 대변은 마이너스를 뜻한다', '차변은 왼쪽, 대변은 오른쪽을 뜻하며 좋고 나쁨과 무관하다', '차변은 항상 자산, 대변은 항상 부채이다'],
     answer: 2, explanation: '차변·대변은 기록 위치(왼쪽·오른쪽)일 뿐입니다. 계정 종류와 증가·감소에 따라 기록 위치가 정해집니다.',
   },
   {
-    id: 'u05', kind: 'choice', type: 'meaning', chapterId: 4, difficulty: 1, source: 'added',
+    id: 'u05', kind: 'choice', type: 'meaning', chapterId: 2, difficulty: 1, source: 'added',
     prompt: '회계상 거래로 보기 위한 조건으로 알맞은 것은?',
     options: ['사건이 일어났다는 사실만 있으면 된다', '화폐로 측정할 수 있고 재무상태 또는 손익에 영향을 준다', '반드시 현금이 오가야 한다', '반드시 계약서가 있어야 한다'],
     answer: 1, explanation: '회계상 거래는 화폐로 측정할 수 있고 재무상태 또는 손익에 영향을 주는 사건입니다.',
@@ -83,25 +83,25 @@ export const addedQuestions: QuestionRecord[] = [
   side('s08', '회사가 은행에서 대출을 받아 대출금(부채)이 생겼습니다. 대출금은 어느 쪽에 기록할까요?', '대변', '대출금은 부채이고 부채가 증가하므로 대변입니다. 보통예금(자산) 증가는 차변입니다.'),
 
   {
-    id: 'a01', kind: 'choice', type: 'account', chapterId: 5, difficulty: 1, source: 'added',
+    id: 'a01', kind: 'choice', type: 'account', chapterId: 3, difficulty: 1, source: 'added',
     prompt: '전기요금 5만 원을 계좌이체로 지급했습니다. 차변에 기록할 계정은?',
     options: ['전기료(비용)', '보통예금', '자본금', '용역수익'],
     answer: 0, explanation: '비용이 발생·증가하므로 차변은 전기료(비용)입니다. 보통예금(자산)은 감소하므로 대변에 기록합니다.',
   },
   {
-    id: 'a02', kind: 'choice', type: 'account', chapterId: 5, difficulty: 2, source: 'added',
+    id: 'a02', kind: 'choice', type: 'account', chapterId: 3, difficulty: 2, source: 'added',
     prompt: '상품 인도 전에 계약금 100,000원을 보통예금으로 먼저 받았습니다. 일반적으로 대변에 기록할 계정은?',
     options: ['용역수익', '선수금', '자본금', '보통예금'],
     answer: 1, explanation: '남은 의무가 있는 상태에서 먼저 받은 돈은 일반적으로 선수금(부채)입니다. 보통예금(자산) 증가는 차변입니다.',
   },
   {
-    id: 'a03', kind: 'choice', type: 'account', chapterId: 5, difficulty: 2, source: 'added',
+    id: 'a03', kind: 'choice', type: 'account', chapterId: 3, difficulty: 2, source: 'added',
     prompt: '대출 원금 200,000원을 보통예금으로 상환했습니다. 차변에 기록할 계정은?',
     options: ['이자비용', '대출금', '보통예금', '용역수익'],
     answer: 1, explanation: '대출 원금 상환은 대출금(부채)의 감소이므로 차변입니다. 원금 상환 자체는 비용이 아닙니다.',
   },
   {
-    id: 'a04', kind: 'choice', type: 'account', chapterId: 5, difficulty: 2, source: 'added',
+    id: 'a04', kind: 'choice', type: 'account', chapterId: 3, difficulty: 2, source: 'added',
     prompt: '현금 100,000원으로 사무용 비품을 구입했습니다. 올바른 분개는?',
     options: ['차변 비품 100,000원 / 대변 현금 100,000원', '차변 현금 100,000원 / 대변 비품 100,000원', '차변 비품 100,000원 / 대변 자본금 100,000원', '차변 소모품비 100,000원 / 대변 비품 100,000원'],
     answer: 0, explanation: '비품(자산)이 증가하므로 차변, 현금(자산)이 감소하므로 대변입니다. 자산의 종류만 바뀌어 자산 총액은 변하지 않습니다.',
@@ -122,7 +122,7 @@ export const addedQuestions: QuestionRecord[] = [
   balance('b04', '차변: 임차료 300,000원, 통신비 40,000원\n대변: 현금 300,000원', BAL, 1, '차변 합계 340,000원, 대변 합계 300,000원이므로 차변이 40,000원 더 큽니다.'),
   balance('b05', '차변: 보통예금 800,000원\n대변: 용역수익 500,000원, 선수금 400,000원', BAL, 2, '차변 합계 800,000원, 대변 합계 500,000 + 400,000 = 900,000원이므로 대변 합계가 더 큽니다.'),
   {
-    id: 'b06', kind: 'choice', type: 'balance', chapterId: 6, difficulty: 2, source: 'added',
+    id: 'b06', kind: 'choice', type: 'balance', chapterId: 5, difficulty: 2, source: 'added',
     prompt: '차변 합계와 대변 합계가 같다면 모든 계정과 금액이 반드시 정확하다고 할 수 있을까요?',
     options: ['그렇다. 합계가 같으면 오류가 없다', '아니다. 잘못된 계정에 같은 금액을 기록해도 합계는 같을 수 있다', '그렇다. 단 시산표에서만', '아니다. 합계는 항상 달라야 한다'],
     answer: 1, explanation: '양쪽에 같은 금액을 잘못된 계정으로 기록해도 합계는 같을 수 있습니다. 증빙과 거래 내용, 계정과목도 함께 확인해야 합니다.',

@@ -1,6 +1,15 @@
 import type { ReactNode } from 'react'
 import type { Chapter } from '../types/content'
 
+/** 줄바꿈(\n)마다 문단을 나눠 보여 줍니다. '· '로 시작하면 목록, '['로 시작하면 소제목으로 표시합니다. */
+const Lines = ({ text }: { text: string }) => (
+  <div className="lines">
+    {text.split('\n').map((line, i) => (
+      <p key={i} className={line.startsWith('· ') ? 'bullet' : line.startsWith('[') ? 'sub' : undefined}>{line}</p>
+    ))}
+  </div>
+)
+
 export default function ChapterSection({ chapter, extra }: { chapter: Chapter; extra?: ReactNode }) {
   const no = String(chapter.id).padStart(2, '0')
   const concepts = (
@@ -10,7 +19,7 @@ export default function ChapterSection({ chapter, extra }: { chapter: Chapter; e
         {chapter.concepts.map((c) => (
           <article className="concept" key={c.title}>
             <h4>{c.title}</h4>
-            <p>{c.body}</p>
+            <Lines text={c.body} />
           </article>
         ))}
       </div>
@@ -27,18 +36,24 @@ export default function ChapterSection({ chapter, extra }: { chapter: Chapter; e
         <div className="label">기초 설명</div>
         <p>{chapter.note}</p>
       </div>
+      {chapter.devView && (
+        <div className="beginner-note">
+          <div className="label">개발자 시선</div>
+          <p>{chapter.devView}</p>
+        </div>
+      )}
       {extra}
       {concepts}
       <div className="worked">
         <div className="label">계산·적용 예제</div>
         <h3>{chapter.worked.title}</h3>
-        <p>{chapter.worked.body}</p>
+        <Lines text={chapter.worked.body} />
       </div>
       <h3>확인 문제 · 정답과 풀이</h3>
       <p className="muted">먼저 문제를 생각한 뒤 눌러 정답과 풀이를 확인하세요.</p>
       {chapter.quizzes.map((q) => (
         <details className="quiz" key={q.question}>
-          <summary>{q.question}</summary>
+          <summary>{q.question.split('\n').map((l, i) => <span key={i}>{i > 0 && <br />}{l}</span>)}</summary>
           <div className="answer">
             {q.answer.map((a) => (
               <p key={a.label}><strong>{a.label}</strong>　{a.text}</p>
