@@ -5,8 +5,8 @@ export default function HomePage() {
   return (
     <>
       <section className="hero">
-        <div className="eyebrow">Accounting fundamentals for developers</div>
-        <h1>회계의 기초</h1>
+        <div className="eyebrow">Accounting Education for IT Developers</div>
+        <h1>IT개발자 회계교육</h1>
         <p>회계 기초 개념을 이해하고, 상황형 미션과 퀴즈로 직접 풀어 보며 익힐 수 있는 학습 사이트입니다.</p>
         <div className="chips">
           <span className="chip">{chapters.length}개 장 학습 가이드</span>

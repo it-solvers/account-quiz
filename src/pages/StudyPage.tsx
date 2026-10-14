@@ -73,7 +73,6 @@ export default function StudyPage({ section }: { section?: string }) {
             {glossary.map((g) => <div key={g.term}><strong>{g.term}</strong>{g.desc}</div>)}
           </div>
         </section>
-        <div className="footer">회계의 기초 · 개발자 교육 자료 · 인터랙티브 학습판</div>
       </main>
     </div>
   )

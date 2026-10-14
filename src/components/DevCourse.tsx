@@ -63,7 +63,7 @@ const Card = ({ title, children }: { title: string; children: ReactNode }) => (
 export default function DevCourse() {
   return (
     <section className="dev-course" id="developer-workflow">
-      <div className="section-kicker">ACCOUNTING FOR DEVELOPERS</div>
+      <div className="section-kicker">ACCOUNTING EDUCATION FOR IT DEVELOPERS</div>
       <h2>회계 시스템 개발 흐름 이해하기</h2>
       <p>이 절은 회계 지식이 없는 개발자가 업무 요구사항을 읽고, 데이터와 처리 흐름을 이해하는 데 목적이 있습니다. 아래 데이터 구조와 코드는 이해를 돕기 위한 예시이며 특정 회사의 실제 설계나 세법·회계정책을 의미하지 않습니다.</p>
       <div className="notice"><strong>먼저 기억할 점</strong><br />개발자는 화면에 입력된 금액을 저장하는 것만으로 회계 처리가 끝났다고 보면 안 됩니다. 거래를 어떤 계정으로 기록할지 결정하는 업무 규칙, 차변·대변 균형, 승인 상태, 원장 반영 여부까지 함께 이해해야 합니다.</div>

@@ -9,7 +9,13 @@ export default function Header({ page }: { page: Route['page'] }) {
   return (
     <header className="topbar">
       <div className="topbar-inner">
-        <a className="brand" href="#/">회계의 기초 · 개발자 교육</a>
+        <div className="brand-group">
+          <a className="brand logo" href="https://itsolvers.co.kr/" title="아이티해결단 메인으로 이동">
+            <img src="https://itsolvers.co.kr/images/logo.png" alt="아이티해결단 로고" />
+            <span>아이티해결단</span>
+          </a>
+          <a className="brand-sub" href="#/">IT개발자 회계교육</a>
+        </div>
         <nav className="top-links" aria-label="주 메뉴">
           {link('#/', '학습 홈', page === 'home')}
           {link('#/study', '교재 학습', page === 'study')}

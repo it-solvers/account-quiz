@@ -1,4 +1,4 @@
-# account-quiz — 회계의 기초 학습 사이트
+# account-quiz — IT개발자 회계교육 학습 사이트
 
 회계 기초 교재(9개 장 + 개발자 실무 절)와 퀴즈를 하나로 합친 React + TypeScript + Vite 앱입니다.
 

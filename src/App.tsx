@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useHashRoute } from './logic/useHashRoute'
 import Header from './components/Header'
+import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import StudyPage from './pages/StudyPage'
 import QuizPage from './pages/QuizPage'
@@ -20,6 +21,7 @@ export default function App() {
         {route.page === 'study' && <StudyPage section={route.section} />}
         {route.page === 'quiz' && <QuizPage />}
       </div>
+      <Footer />
     </>
   )
 }
