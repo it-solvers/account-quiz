@@ -14,7 +14,7 @@ export default function Header({ page }: { page: Route['page'] }) {
             <img src="https://itsolvers.co.kr/images/logo.png" alt="아이티해결단 로고" />
             <span>아이티해결단</span>
           </a>
-          <a className="brand-sub" href="#/">IT개발자 회계교육</a>
+          <a className="brand-sub" href="#/">개발자를 위한 회계</a>
         </div>
         <nav className="top-links" aria-label="주 메뉴">
           {link('#/', '학습 홈', page === 'home')}
