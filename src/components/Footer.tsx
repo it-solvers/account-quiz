@@ -6,6 +6,9 @@ export default function Footer() {
         <span>| 대표 이혁</span>
         <span>| 사업자등록번호 364-11-03265</span>
       </div>
+      <div className="site-footer-inner site-footer-copy">
+        © 2026아이티해결단 (IT Solvers). All rights reserved.
+      </div>
     </footer>
   )
 }

@@ -111,6 +111,7 @@
 .site-footer-inner{max-width:1220px;margin:auto;padding:0 22px;display:flex;flex-wrap:wrap;gap:4px 8px}
 .site-footer-inner strong{color:#e5e7eb}
 .site-footer a{color:inherit}
+.site-footer-copy{margin-top:10px}
 @media print{.site-footer{display:none}}
 /* 내용이 짧아도 푸터를 화면 맨 아래에 고정 */
 #root{min-height:100vh;display:flex;flex-direction:column}
